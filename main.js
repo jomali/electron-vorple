@@ -2,7 +2,8 @@
 const {app, BrowserWindow} = require('electron')
 
 const static = require('node-static');
-var file = new static.Server('./');
+var file = new static.Server('./server/');
+const serverPort = 9990;
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -15,7 +16,7 @@ function createWindow () {
 	    request.addListener('end', function () {
 	        file.serve(request, response);
 	    }).resume();
-	}).listen(8080);
+	}).listen(serverPort);
 
 
 
@@ -25,7 +26,7 @@ function createWindow () {
   // and load the index.html of the app.
   // mainWindow.loadFile('index.html')
 
-	mainWindow.loadURL('http://localhost:8080/index.html');
+	mainWindow.loadURL(`http://localhost:${serverPort}/index.html`);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

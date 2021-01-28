@@ -17,7 +17,7 @@
   "author": "J. Francisco Martín Lisaso",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^2.0.18",
+    "electron": "^9.4.0",
     "node-static": "^0.7.7"
   }
 }
